@@ -2,230 +2,252 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <title>Atestat Informatica - Grafuri | Jâtea Miruna Andreea</title>
+  <title>Proiect de Atestat - Grafuri | Jâtea Miruna Andreea</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose'
+    });
+  </script>
+
   <style>
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
-      background-color: #f4f6f9;
-      color: #222;
+      background-color: #f1f5f9;
+      color: #1e293b;
       margin: 0;
       padding: 0;
     }
 
-    header {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-      border-bottom: 5px solid #3498db;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-      text-transform: uppercase;
-    }
-
-    header h2 {
-      margin: 8px 0 0;
-      font-size: 18px;
-      font-weight: normal;
-      color: #bdc3c7;
-    }
 
     nav {
-      background-color: #34495e;
+      background-color: #0f172a;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       text-align: center;
-      border-bottom: 2px solid #2980b9;
+      padding: 6px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     nav a {
       display: inline-block;
-      color: white;
+      color: #f1f5f9;
       text-decoration: none;
-      padding: 12px 16px;
+      padding: 7px 15px;
+      font-size: 13.5px;
       font-weight: bold;
-      font-size: 14px;
+      transition: background 0.15s ease;
     }
 
     nav a:hover {
-      background-color: #3498db;
-      color: #fff;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 25px auto;
-      background: white;
-      padding: 35px;
-      border: 1px solid #dcdcdc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      background-color: #2563eb;
+      color: white;
       border-radius: 4px;
     }
 
-    .elev-box {
-      border: 2px dashed #3498db;
-      background-color: #ebf5fb;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 6px;
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      background: white;
+      padding: 35px 40px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
-    .elev-box table {
-      width: 100%;
-      border: none;
+    .coperta-box {
+      border: 2px solid #1e3a8a;
+      padding: 25px;
+      margin-bottom: 35px;
+      background-color: #f8fafc;
+      text-align: center;
     }
 
-    .elev-box td {
-      border: none;
-      padding: 4px 8px;
+    .coperta-box h3 {
+      margin: 0;
+      color: #1e3a8a;
+      font-size: 18px;
+    }
+
+    .coperta-box h2 {
+      margin: 14px 0 6px;
+      color: #475569;
       font-size: 15px;
     }
 
-    h2.sectiune {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 6px;
-      margin-top: 35px;
-      text-transform: uppercase;
-      font-size: 20px;
+    .coperta-box h1 {
+      margin: 0 0 15px;
+      color: #1e3a8a;
+      font-size: 26px;
     }
 
-    h3 {
-      color: #2980b9;
-      margin-top: 22px;
-      font-size: 17px;
-    }
-
-    h4 {
-      color: #333;
+    .meta-tabel {
+      width: 100%;
       margin-top: 15px;
-      margin-bottom: 5px;
+      border-top: 1px dashed #94a3b8;
+      padding-top: 15px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .meta-tabel td {
+      padding: 3px 10px;
+      border: none;
+    }
+
+    h1.sec-title {
+      font-size: 19px;
+      color: #0f172a;
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 5px;
+      margin: 35px 0 16px;
+      text-transform: uppercase;
+    }
+
+    h2.sub-title {
+      font-size: 16px;
+      color: #1e3a8a;
+      margin: 22px 0 10px;
+      border-left: 4px solid #3b82f6;
+      padding-left: 8px;
+    }
+
+    h3.sub-sub-title {
+      font-size: 14.5px;
+      color: #334155;
+      margin: 16px 0 8px;
+      font-weight: bold;
     }
 
     p {
       text-align: justify;
-      margin: 10px 0;
+      margin: 9px 0;
+      font-size: 14px;
     }
 
     ul, ol {
-      margin-left: 25px;
-      margin-bottom: 15px;
+      margin-left: 22px;
+      margin-bottom: 12px;
+      font-size: 14px;
     }
 
     li {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
-    table.data-table {
+    .m {
+      font-family: "Times New Roman", Times, serif;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .matrix-display {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      letter-spacing: 5px;
+      line-height: 1.5;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #1e3a8a;
+      padding: 10px 16px;
+      display: inline-block;
+      margin: 8px 0;
+    }
+
+    table.tabel-doc {
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
+      margin: 16px 0;
+      font-size: 13.5px;
     }
 
-    table.data-table th, table.data-table td {
-      border: 1px solid #bdc3c7;
-      padding: 10px;
+    table.tabel-doc th, table.tabel-doc td {
+      border: 1px solid #cbd5e1;
+      padding: 9px;
       text-align: left;
+      vertical-align: top;
     }
 
-    table.data-table th {
-      background-color: #ecf0f1;
-      color: #2c3e50;
-    }
-
-    .graf-vizual {
-      background-color: #fafafa;
-      border: 1px solid #e0e0e0;
-      padding: 15px;
-      text-align: center;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-
-    .matrice-afisata {
-      font-family: "Courier New", Courier, monospace;
+    table.tabel-doc th {
+      background-color: #f1f5f9;
+      color: #0f172a;
       font-weight: bold;
-      letter-spacing: 5px;
-      background: #fdfefe;
-      border: 1px solid #ccc;
-      display: inline-block;
-      padding: 12px 18px;
-      margin: 10px 0;
-      line-height: 1.5;
     }
 
-    pre {
-      background-color: #2d3436;
-      color: #dfe6e9;
+    .diagram-container {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
       padding: 15px;
-      border-radius: 5px;
+      margin: 15px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    .diagram-container.grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    pre.code-area {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 14px;
+      border-radius: 4px;
       overflow-x: auto;
       font-family: Consolas, "Courier New", monospace;
-      font-size: 13.5px;
-      border-left: 5px solid #0984e3;
+      font-size: 12.5px;
+      line-height: 1.45;
+      border-left: 4px solid #3b82f6;
+      margin: 12px 0;
     }
 
-    .comentariu {
-      color: #00b894;
-    }
-
-    .cuvant-cheie {
-      color: #74b9ff;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #2c3e50;
-      color: #bdc3c7;
-      padding: 20px;
-      font-size: 13px;
-      margin-top: 40px;
-    }
-
-    .top-btn {
-      display: inline-block;
-      margin-top: 10px;
+    .inapoi {
+      display: block;
+      text-align: right;
       font-size: 12px;
-      color: #3498db;
+      color: #2563eb;
       text-decoration: none;
+      margin: 6px 0 16px;
     }
-    .top-btn:hover {
+
+    .inapoi:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
 
-  <!-- Header stil Proiect Școlar -->
-  <header>
-    <h1>Liceul Teoretic „Emil Racoviță” Galați</h1>
-    <h2>Lucrare de atestat profesional la informatică</h2>
-  </header>
-
-  <!-- Meniu clasic -->
   <nav>
-    <a href="#info">Date Proiect</a>
+    <a href="#date-proiect">Date Proiect</a>
     <a href="#argument">Argument</a>
     <a href="#cap1">Grafuri Orientate</a>
     <a href="#cap2">Grafuri Neorientate</a>
     <a href="#concluzii">Concluzii</a>
-    <a href="#coduri">Coduri C++</a>
+    <a href="#anexe">Anexe</a>
     <a href="#bibliografie">Bibliografie</a>
   </nav>
 
   <div class="container">
 
-    <!-- Caseta Atestat -->
-    <div id="info" class="elev-box">
-      <h3 style="text-align:center; margin-top:0; color:#2c3e50;">PROIECT DE ATESTAT</h3>
-      <table style="margin-top: 15px;">
+    <!-- Pagina de gardă (Date Proiect) -->
+    <div id="date-proiect" class="coperta-box">
+      <h3>LICEUL TEORETIC EMIL RACOVITA GALATI</h3>
+      <h2>Proiect de atestat</h2>
+      <h1>Tema: Grafuri</h1>
+      
+      <table class="meta-tabel">
         <tr>
-          <td><strong>Tema:</strong> Grafuri</td>
+          <td><strong>Nivel:</strong> 3</td>
           <td><strong>Elev:</strong> Jâtea Miruna Andreea</td>
         </tr>
         <tr>
@@ -234,81 +256,228 @@
         </tr>
         <tr>
           <td><strong>Specializare:</strong> Tehnician analist programator</td>
-          <td><strong>An școlar:</strong> 2026 - 2027</td>
+          <td><strong>An:</strong> 2027</td>
         </tr>
       </table>
     </div>
 
     <!-- ARGUMENT -->
     <section id="argument">
-      <h2 class="sectiune">Argument</h2>
-      <h3>Scurt istoric</h3>
+      <h1 class="sec-title">Argument</h1>
+      
+      <h2 class="sub-title">SCURT ISTORIC</h2>
       <p>
-        Data nașterii teoriei grafurilor poate fi considerată anul 1736, când matematicianul elvețian <strong>Leonhard Euler</strong> a rezolvat celebra <em>Problemă a celor 7 poduri din Königsberg</em>. Problema cerea găsirea unui traseu care să traverseze fiecare pod o singură dată și să se întoarcă de unde a plecat. Euler a demonstrat că un astfel de drum este imposibil, punând bazele teoriei grafurilor și ale topologiei.
+        Data nașterii teoriei grafurilor poate fi considerate anul 1736 cand matematicianul elvetian Leunhard Euler a publicat în revista ‘’Comentarii Academice Scientiarum Imperialis Petropolitanae” în limba latina, solutia unei probleme de geometrie a pozitiei (Problema celor 7 poduri), stabilind astfel o metoda pentru rezolvarea unei intregi clase de memorii.
+      </p>
+      <p>
+        Problema celor șapte poduri din Königsberg este o problemă de matematică de importanță istorică. Problema era de a elabora un drum prin oraș, care să traverseze fiecare dintre aceste poduri o dată și numai o data. Euler a arătat în 1736 că nu există soluție, punând bazele teoriei grafurilor și prefigurând ideea de topologie.
       </p>
 
-      <h3>Exemple de grafuri în viața de zi cu zi:</h3>
-      <ul>
-        <li><strong>Rețele de socializare (Facebook, Instagram):</strong> Utilizatorii sunt nodurile, iar relațiile de prietenie reprezintă muchiile.</li>
-        <li><strong>Hărți rutiere și navigație (Waze, Google Maps):</strong> Orașele sau intersecțiile sunt noduri, iar drumurile sunt muchii (sau arce dacă au sens unic).</li>
-        <li><strong>Rețele de utilități:</strong> Conductele de apă, cablurile electrice sau conductele de gaz leagă locuințe și stații centrale.</li>
-        <li><strong>Rețele de transport public:</strong> Hărțile liniilor de metrou sau tren (noduri = stații, muchii = șinele dintre ele).</li>
-      </ul>
-      <p>
-        Am ales această temă deoarece grafurile reprezintă una dintre cele mai practice și fascinante structuri de date studiate la orele de informatică din liceu, având aplicabilitate directă în algoritmi reali.
-      </p>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+      <!-- Diagrama Podurilor din Königsberg cu Mermaid -->
+      <div class="diagram-container">
+        <div style="font-weight: bold; margin-bottom: 8px; font-size: 13px;">Problema celor 7 poduri din Königsberg</div>
+        <div class="mermaid">
+          graph TD
+            Nord["Malul de Nord"]
+            Sud["Malul de Sud"]
+            Insula["Insulă"]
+            Est["Malul de Est"]
+
+            Nord ===|Pod 1| Insula
+            Nord ===|Pod 2| Insula
+            Sud ===|Pod 3| Insula
+            Sud ===|Pod 4| Insula
+            Nord ===|Pod 5| Est
+            Sud ===|Pod 6| Est
+            Insula ===|Pod 7| Est
+
+            style Nord fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+            style Sud fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+            style Insula fill:#fef08a,stroke:#ca8a04,stroke-width:2px;
+            style Est fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+        </div>
+      </div>
+
+      <p>În viața de zi cu zi, multe sisteme și rețele pot fi reprezentate ca grafuri neorientate:</p>
+      
+      <p><strong>1. Rețelele de socializare (ex. Facebook)</strong><br>
+      Nodurile (vârfurile): Utilizatorii.<br>
+      Muchiile: Relația de prietenie.</p>
+
+      <p><strong>2. Rețeaua de drumuri și hărțile rutiere</strong><br>
+      Nodurile: Orașe, intersecții sau sate.<br>
+      Muchiile: Șoselele bidirecționale care leagă două localități.</p>
+
+      <p><strong>3. Rețelele electrice sau de apă/gaz</strong><br>
+      Nodurile: Locuințe, stații de transformare, intersecții de conducte.<br>
+      Muchiile: Cablurile electrice sau țevile..</p>
+
+      <p><strong>4. Hărțile liniilor de metrou sau tren</strong><br>
+      Nodurile: Stațiile de metrou / garile.<br>
+      Muchiile: Șinele dintre două stații consecutive.</p>
+
+      <p><strong>5. Relațiile de colaborare sau proiecte (Echipe)</strong><br>
+      Nodurile: Membrii unei echipe (colegi de clasă sau de muncă).<br>
+      Muchiile: Faptul că doi oameni lucrează împreună la aceeași sarcină.</p>
+
+      <p>Larga aplicabilitate a teoriei grafurilor repezintă motivul pentru care am ales acest domeniu.</p>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
     <!-- CAPITOLUL 1 -->
     <section id="cap1">
-      <h2 class="sectiune">Capitolul 1: Grafuri Orientate</h2>
-      
-      <h3>1.1 Definiții</h3>
-      <p>
-        Se numeşte <strong>graf orientat</strong> (sau <em>digraf</em>) o pereche ordonată de mulțimi notată <strong>G = (V, U)</strong>, unde:
-      </p>
-      <ul>
-        <li><strong>V</strong> este o mulțime finită şi nevidă de elemente numite <em>noduri</em> (sau <em>vârfuri</em>);</li>
-        <li><strong>U</strong> este o mulțime de perechi ordonate de elemente din V, numite <em>arce</em>.</li>
-      </ul>
+      <h1 class="sec-title">CAP. 1 GRAFURI ORIENTATE</h1>
 
-      <p><strong>Exemplu:</strong></p>
-      <p>
-        V = {1, 2, 3, 4, 5, 6}<br>
-        U = {(1,6), (2,1), (2,4), (3,2), (4,2), (5,4), (6,1), (6,2), (6,4)}
-      </p>
+      <!-- 1.1 Definitii -->
+      <div id="cap1-1">
+        <h2 class="sub-title">1.1 Definiții</h2>
+        <p><strong>Def1:</strong> Se numeşte graf orientat sau digraf o pereche ordonată de mulțimi notată <span class="m">G=(V, U)</span>, unde:</p>
+        <ul>
+          <li><span class="m">V</span> este o mulțime finită şi nevidă ale cărei elemente se numesc noduri sau vârfuri;</li>
+          <li><span class="m">U</span> este o mulțime de perechi ordonate de elemente distincte din <span class="m">V</span> ale cărei elemente se numesc arce.</li>
+        </ul>
 
-      <div class="graf-vizual">
-        <strong>Reprezentarea arcelor:</strong><br>
-        <code>(1) ⇄ (6) | (2) → (1) | (2) ⇄ (4) | (3) → (2) | (5) → (4) | (6) → (2)</code>
+        <p><strong>Exemplu:</strong></p>
+        <p><span class="m">V={1,2,3,4,5,6}</span></p>
+        <p><span class="m">U={(1,6),(2,1),(2,4),(3,2),(4,2),(5,4),(6,1),(6,2),(6,4)}</span></p>
+
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              6 --> 1
+              6 --> 2((2))
+              6 --> 4((4))
+              2 --> 1
+              2 --> 4
+              3((3)) --> 2
+              4 --> 2
+              5((5)) --> 4
+          </div>
+        </div>
+
+        <p>Observăm că arcele (1,6) și (6,1) sunt distincte.</p>
+
+        <h3 class="sub-sub-title">Noțiuni</h3>
+        <ul>
+          <li><strong>extremități ale unui arc:</strong> pentru arcul <span class="m">u=(x,y)</span>, se numesc extremități ale sale nodurile <span class="m">x</span> şi <span class="m">y</span>;
+            <ul>
+              <li><span class="m">x</span> se numeşte extremitate inițială;</li>
+              <li><span class="m">y</span> se numeşte extremitate finală;</li>
+              <li><span class="m">y</span> se numește succesor al lui <span class="m">x</span>;</li>
+              <li><span class="m">x</span> se numește predecesor al lui <span class="m">y</span>.</li>
+            </ul>
+          </li>
+          <li><strong>vârfuri adiacente:</strong> dacă într-un graf există arcul <span class="m">u=(x,y)</span> (sau <span class="m">u=(y,x)</span>, sau amândouă), se spune despre nodurile <span class="m">x</span> şi <span class="m">y</span> că sunt adiacente;</li>
+          <li><strong>incidență:</strong>
+            <ul>
+              <li>dacă <span class="m">u1</span> şi <span class="m">u2</span> sunt două arce ale aceluiaşi graf, se numesc incidente dacă au o extremitate comună. Exemplu: <span class="m">u1=(x,y)</span> şi <span class="m">u2=(y,z)</span> sunt incidente;</li>
+              <li>dacă <span class="m">u1=(x,y)</span> este un arc într-un graf, se spune despre el şi nodul <span class="m">x</span>, sau nodul <span class="m">y</span>, că sunt incidente.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 class="sub-sub-title">Definiții alternative</h3>
+        <p><strong>Def2:</strong> Se numeşte graf orientat o pereche ordonată de mulțimi notată <span class="m">G=(V, U)</span>, unde:</p>
+        <ul>
+          <li><span class="m">V</span> este o mulțime, finită şi nevidă, ale cărei elemente se numesc noduri sau vârfuri;</li>
+          <li><span class="m">U</span> este o mulțime, de perechi ordonate de elemente din <span class="m">V</span>, ale cărei elemente se numesc arce.</li>
+        </ul>
+        <p>
+          Această definiție diferă de prima definiție prin faptul ca acum nu se mai spune despre extremitățile unui arc ca trebuie să fie distincte. În baza acestei definiții, sunt permise şi arce de genul: <span class="m">u=(x, x)</span> unde <span class="m">x&isin;V</span>; aceste arce se numesc <strong>bucle</strong>.
+        </p>
+
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              6 --> 1
+              6 --> 2((2))
+              6 --> 4((4))
+              2 --> 1
+              2 --> 4
+              3((3)) --> 2
+              3 --> 3
+              4 --> 2
+              5((5)) --> 4
+          </div>
+        </div>
+
+        <p><strong>Def3:</strong> Se numeşte graf orientat o pereche ordonată de mulțimi notată <span class="m">G=(V, U)</span>, unde:</p>
+        <ul>
+          <li><span class="m">V</span> este o mulțime, finită şi nevidă, ale cărei elemente se numesc noduri sau vârfuri;</li>
+          <li><span class="m">U</span> este o familie de perechi ordonate de elemente din <span class="m">V</span>, numită familia de arce.</li>
+        </ul>
+        <p>
+          Această definiție diferă de cea anterioară prin faptul ca acum nu numai că se admit bucle, dar se admit şi mai multe arce identice.
+        </p>
+
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              6 --> 1
+              6 -->|1| 2((2))
+              6 -->|2| 2
+              6 -->|3| 2
+              6 --> 4((4))
+              2 --> 1
+              2 --> 4
+              3((3)) --> 2
+              3 --> 3
+              4 --> 2
+              5((5)) --> 4
+          </div>
+        </div>
+        <p>Observăm că există trei arce (6,2).</p>
+        <p><strong>Observație.</strong> Dacă într-un graf orientat numărul arcelor identice nu depăşeşte numărul <span class="m">p</span>, atunci se numeşte <span class="m">p</span>-graf. Graful de mai sus este un 3-graf.</p>
       </div>
 
-      <h4>Noțiuni fundamentale:</h4>
-      <ul>
-        <li>Pentru un arc <strong>(x, y)</strong>: <strong>x</strong> este extremitatea inițială (predecesor), iar <strong>y</strong> este extremitatea finală (succesor).</li>
-        <li><strong>Bucle:</strong> Un arc de tipul <code>(x, x)</code> care pleacă și se întoarce în același nod.</li>
-        <li><strong>Nod izolat:</strong> Un nod care nu are niciun arc incident (gradele sale sunt 0).</li>
-      </ul>
+      <!-- 1.2 Grade -->
+      <div id="cap1-2">
+        <h2 class="sub-title">1.2 Grade</h2>
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(V, U)</span> un graf orientat și <span class="m">x</span> un nod al său.</p>
+        <p>Se numeşte <strong>grad exterior</strong> al nodului <span class="m">x</span>, numărul arcelor de forma <span class="m">(x,y)</span> (adică numărul arcelor care ies din <span class="m">x</span>), notat <span class="m">d+(x)</span>.</p>
+        <p>Se numeşte <strong>grad interior</strong> al nodului <span class="m">x</span>, numărul arcelor de forma <span class="m">(y,x)</span> (adică numărul arcelor care intră în <span class="m">x</span>), notat <span class="m">d-(x)</span>.</p>
 
-      <h3>1.2 Gradele unui nod</h3>
-      <p>Fie un nod <em>x</em> dintr-un graf orientat:</p>
-      <ul>
-        <li><strong>Grad exterior (d<sup>+</sup>(x)):</strong> numărul de arce care ies din nodul x.</li>
-        <li><strong>Grad interior (d<sup>-</sup>(x)):</strong> numărul de arce care intră în nodul x.</li>
-      </ul>
-      <p><em>Proprietate:</em> Într-un graf orientat, suma gradelor exterioare ale tuturor nodurilor este egală cu suma gradelor interioare și ambele sunt egale cu numărul total de arce (m).</p>
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              6 --> 1
+              6 --> 2((2))
+              6 --> 4((4))
+              2 --> 1
+              2 --> 4
+              3((3)) --> 2
+              4 --> 2
+              5((5)) --> 4
+          </div>
+        </div>
+        <p>Pentru graful alăturat:<br>
+        <span class="m">d+(2)=2</span><br>
+        <span class="m">d-(2)=3</span></p>
 
-      <h3>1.3 Metode de memorare</h3>
-      <h4>1. Matricea de adiacență</h4>
-      <p>Este o matrice pătratică <code>A</code> de dimensiune <code>n x n</code>, unde:</p>
-      <ul>
-        <li><code>A[i][j] = 1</code>, dacă există arcul orientat de la <em>i</em> la <em>j</em>;</li>
-        <li><code>A[i][j] = 0</code>, în caz contrar.</li>
-      </ul>
-      
-      <div style="text-align: center;">
-        <div class="matrice-afisata">
+        <p><strong>Teoremă:</strong> Într-un graf orientat, suma gradelor exterioare a tuturor nodurilor este egală cu suma gradelor interioare a tuturor nodurilor și cu numărul de arce.</p>
+        <p>Un nod <span class="m">x</span> se numește izolat dacă <span class="m">d+(x)=d-(x)=0</span> (are gradul interior și gradul exterior egal cu 0)</p>
+      </div>
+
+      <!-- 1.3 Reprezentarea grafurilor orientate -->
+      <div id="cap1-3">
+        <h2 class="sub-title">1.3 Reprezentarea grafurilor orientate</h2>
+
+        <h3 class="sub-sub-title">Matricea de adiacență</h3>
+        <p>
+          Fie <span class="m">G=(V,U)</span> un graf orientat cu <span class="m">n</span> noduri, în care nu există mai multe arce de la un nod la altul. Matricea de adiacență a grafului este o matrice cu <span class="m">n</span> linii și <span class="m">n</span> coloane și elemente 0 sau 1, astfel:<br>
+          <span class="m">Ai,j=1</span> dacă există arcul (i,j)<br>
+          <span class="m">Ai,j=0</span> dacă nu există arcul (i,j)
+        </p>
+
+        <p>Pentru graful alăturat, matricea de adiacență este:</p>
+        <div class="matrix-display">
           0 0 0 0 0 1<br>
           1 0 0 1 0 0<br>
           0 1 0 0 0 0<br>
@@ -316,258 +485,1014 @@
           0 0 0 1 0 0<br>
           1 1 0 1 0 0
         </div>
+
+        <p>Observăm că matricea de adiacență:</p>
+        <ul>
+          <li>are zerouri pe diagonală (dacă în graf nu avem bucle)</li>
+          <li>nu trebuie să fie simetrică față de diagonala principală</li>
+        </ul>
+        <p>Pentru reprezentarea în memorie vom folosi un tablou bidimensional ale cărui dimensiuni sunt în concordanță cu numărul de noduri din graf.</p>
+        <p>Considerăm un graf cu maxim 50 de noduri. În C/C++ vom avea declarația:</p>
+        <pre class="code-area"><code>int A[51][51];</code></pre>
+
+        <h3 class="sub-sub-title">Lista de arce</h3>
+        <p>Lista de arce a unui graf orientat reprezintă o mulțime (familie, dacă arcele se pot repeta) ce conține toate arcele din graf.</p>
+        <p>Pentru graful alăturat, lista de arce este:</p>
+        <p><span class="m">U={(1,6),(2,1),(2,4),(3,2),(4,2),(5,4),(6,1),(6,2),(6,4)}</span></p>
+
+        <p>Pentru reprezentarea în memorie putem folosi:</p>
+        <ul>
+          <li>un tablou unidimensional cu elemente de tip struct {int I,J;}</li>
+          <li>două tablouri unidimensionale cu elemente de tip int</li>
+          <li>o listă alocată dinamic</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Listele de adiacență (succesori)</h3>
+        <p>Pentru un graf orientat cu <span class="m">G=(V,U)</span> se va memora numărul de noduri <span class="m">n</span> și apoi, pentru fiecare nod <span class="m">x</span>, lista succesorilor lui <span class="m">x</span>, adică nodurilor <span class="m">y</span> cu proprietatea că există arcul (x,y).</p>
+        <p>Pentru graful alăturat, acestea sunt:</p>
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 15px; font-family: monospace; display: inline-block; margin-bottom: 8px;">
+          1: 6<br>
+          2: 1 4<br>
+          3: 2<br>
+          4: 2<br>
+          5: 4<br>
+          6: 1 2 4
+        </div>
+        <p>
+          La reprezentarea în memorie trebuie avut în vedere că dimensiunile listelor de succesori sunt variabile. De aceea, este neeficientă utilizarea unor tablouri alocate static. Astfel, putem folosi:
+        </p>
+        <ul>
+          <li>un șir de n tablouri unidimensionale alocate dinamic;</li>
+          <li>un șir de n vectori din STL;</li>
+          <li>un șir de n liste simplu (dublu) înlănțuite alocate dinamic.</li>
+        </ul>
       </div>
 
-      <h4>2. Liste de adiacență (succesori)</h4>
-      <p>Pentru fiecare nod memorăm doar vecinii în care se poate ajunge direct:</p>
-      <ul>
-        <li>Nodul 1: 6</li>
-        <li>Nodul 2: 1, 4</li>
-        <li>Nodul 3: 2</li>
-        <li>Nodul 4: 2</li>
-        <li>Nodul 5: 4</li>
-        <li>Nodul 6: 1, 2, 4</li>
-      </ul>
+      <!-- 1.4 Grafuri orientate speciale -->
+      <div id="cap1-4">
+        <h2 class="sub-title">1.4 Grafuri orientate speciale</h2>
 
-      <h3>1.4 Grafuri orientate speciale</h3>
-      <ul>
-        <li><strong>Graf turneu:</strong> graful în care între oricare două noduri distincte <em>i</em> și <em>j</em> există exact un singur arc: fie <code>(i,j)</code>, fie <code>(j,i)</code>.</li>
-        <li><strong>Graf complet:</strong> între oricare două noduri există cel puțin un arc.</li>
-        <li><strong>Graf hamiltonian:</strong> conține un circuit elementar care trece prin toate nodurile grafului o singură dată.</li>
-        <li><strong>Graf eulerian:</strong> conține un circuit care parcurge toate arcele grafului o singură dată.</li>
-      </ul>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+        <h3 class="sub-sub-title">Graf parțial, subgraf</h3>
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(V, U)</span> un graf orientat. Se numeşte graf parțial al grafului <span class="m">G</span>, graful orientat <span class="m">G1=(V, U1)</span>, unde <span class="m">U1 &sube; U</span>.</p>
+        <p>Din definiție rezultă:</p>
+        <ul>
+          <li>Un graf parțial al unui graf orientat <span class="m">G=(V,U)</span>, are aceeaşi mulțime de vârfuri ca şi <span class="m">G</span>, iar mulțimea arcelor este o submulțime a lui <span class="m">U</span> sau chiar <span class="m">U</span>.</li>
+          <li>Fie <span class="m">G=(V, U)</span> un graf orientat. Un graf parțial al grafului <span class="m">G</span>, se obține păstrând vârfurile şi eliminând eventual nişte arce (se pot elimina şi toate arcele sau chiar nici unul).</li>
+        </ul>
+
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(V, U)</span> un graf orientat. Se numeşte subgraf al grafului <span class="m">G</span> graful orientat <span class="m">G1=(V1,U1)</span> unde <span class="m">V1 &sube; V</span> iar <span class="m">U1</span> conține toate arcele din <span class="m">U</span> care au extremitățile în <span class="m">V1</span>.</p>
+        <p>Din definiție rezultă:</p>
+        <ul>
+          <li>Fie <span class="m">G=(V,U)</span> un graf orientat. Un subgraf al grafului <span class="m">G</span>, se obține ştergând eventual anumite vârfuri şi odată cu acestea şi arcele care le admit ca extremitate (nu se pot şterge toate vârfurile deoarece s-ar obține un graf cu mulțimea vârfurilor vidă).</li>
+        </ul>
+
+        <p><strong>Exemplu:</strong></p>
+        <table class="tabel-doc">
+          <thead>
+            <tr>
+              <th>Graful inițial</th>
+              <th>Graf parțial</th>
+              <th>Subgraf</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="mermaid">
+                  graph TD
+                    1((1)) --> 6((6))
+                    6 --> 1
+                    6 --> 2((2))
+                    6 --> 4((4))
+                    2 --> 1
+                    2 --> 4
+                    3((3)) --> 2
+                    4 --> 2
+                    5((5)) --> 4
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph TD
+                    1((1))
+                    6((6)) --> 1
+                    6 --> 2((2))
+                    2 --> 1
+                    2 --> 4((4))
+                    3((3))
+                    4 --> 2
+                    5((5)) --> 4
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph TD
+                    1((1))
+                    2((2)) --> 1
+                    2 --> 4((4))
+                    3((3)) --> 2
+                    4 --> 2
+                    5((5)) --> 4
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>S-au eliminat arcele (1,6), (3,2), (6,4)</td>
+              <td>S-a eliminat nodul 6 și toate arcele incidente cu el.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub-sub-title">Graf complet</h3>
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(V, U)</span> un graf orientat. Graful <span class="m">G</span> se numește graf complet dacă oricare două vârfuri distincte ale sale sunt adiacente.</p>
+        <p>Două vârfuri <span class="m">x</span> și <span class="m">y</span> sunt adiacente dacă:</p>
+        <ul>
+          <li>între ele există arcul (x,y), sau</li>
+          <li>între ele există arcul (y,x), sau</li>
+          <li>între ele există arcele (x,y) şi (y,x).</li>
+        </ul>
+
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              6 --> 1
+              1 --> 2((2))
+              2 --> 1
+              1 --> 4((4))
+              2 --> 3((3))
+              3 --> 2
+              3 --> 4
+              4 --> 3
+              5((5)) --> 4
+              4 --> 5
+              5 --> 6
+              6 --> 5
+              6 --> 2
+              5 --> 2
+              5 --> 1
+              3 --> 5
+              6 --> 3
+              6 --> 4
+              2 --> 4
+          </div>
+        </div>
+        <p><strong>Teoremă:</strong> Numărul de grafuri orientate complete cu <span class="m">n</span> noduri este 3<sup>n*(n-1)/2</sup>.</p>
+
+        <h3 class="sub-sub-title">Graf turneu.</h3>
+        <p><strong>Definiție:</strong> Un graf orientat este turneu, dacă oricare ar fi două vârfuri <span class="m">i</span> şi <span class="m">j</span>, <span class="m">i&ne;j</span>, între ele există un singur arc: arcul (i,j) sau arcul (j,i).</p>
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --> 6((6))
+              2((2)) --> 1
+              1 --> 4((4))
+              3((3)) --> 2
+              4 --> 3
+              5((5)) --> 6
+              6 --> 2
+              5 --> 2
+              3 --> 5
+              6 --> 4
+              2 --> 4
+          </div>
+        </div>
+
+        <h3 class="sub-sub-title">Graf hamiltonian</h3>
+        <p><strong>Definiții:</strong> Fie un graf orientat <span class="m">G=(V,U)</span>.</p>
+        <ul>
+          <li>Un drum elementar care conține toate nodurile grafului se numește drum hamiltonian.</li>
+          <li>Un circuit elementar care conține toate nodurile grafului se numește circuit hamiltonian.</li>
+          <li>Un graf care conține un circuit hamiltonian se numește graf hamiltonian.</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Graful orientat desenat mai jos este hamiltonian, deoarece conține circuitul hamiltonian (2, 1, 5 , 6, 4, 3, 2).</p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              2((2)) --> 1((1))
+              1 --> 5((5))
+              5 --> 6((6))
+              6 --> 4((4))
+              4 --> 3((3))
+              3 --> 2
+              6 --> 2
+              5 --> 2
+              3 --> 5
+              6 --> 3
+              2 --> 4
+          </div>
+        </div>
+
+        <h3 class="sub-sub-title">Graf eulerian</h3>
+        <p><strong>Definiții:</strong> Fie un graf orientat <span class="m">G=(V,U)</span>.</p>
+        <ul>
+          <li>Un drum care conține toate arcele grafului se numește drum eulerian.</li>
+          <li>Un circuit care conține toate arcele grafului se numește circuit eulerian.</li>
+          <li>Un graf care conține un circuit eulerian se numește graf eulerian.</li>
+        </ul>
+        <p><strong>Teoremă:</strong> Un graf fără noduri izolate este eulerian dacă și numai dacă este conex și pentru fiecare nod, gradul interior este egal cu cel exterior.</p>
+        <p><strong>Exemplu:</strong> Graful orientat de mai jos este eulerian.</p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              6((6)) --> 1((1))
+              1 --> 4((4))
+              4 --> 3((3))
+              3 --> 2((2))
+              2 --> 4
+              4 --> 5((5))
+              5 --> 6
+          </div>
+        </div>
+      </div>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
     <!-- CAPITOLUL 2 -->
     <section id="cap2">
-      <h2 class="sectiune">Capitolul 2: Grafuri Neorientate</h2>
-      
-      <h3>2.1 Definiție</h3>
-      <p>
-        Se numeşte <strong>graf neorientat</strong> o pereche ordonată de mulțimi <strong>G = (X, U)</strong>, unde:
-      </p>
-      <ul>
-        <li><strong>X</strong> este o mulțime finită și nevidă de elemente numite <em>noduri</em> (vârfuri);</li>
-        <li><strong>U</strong> este o mulțime de perechi neordonate de noduri distincte, numite <em>muchii</em> (notate <code>[x, y]</code>).</li>
-      </ul>
+      <h1 class="sec-title">CAPITOLUL 2: GRAFURI NEORIENTATE</h1>
 
-      <p><strong>Exemplu:</strong></p>
-      <p>
-        X = {1, 2, 3, 4, 5}<br>
-        U = {[1,2], [1,5], [2,5], [4,5]} (Nodul 3 este izolat)
-      </p>
+      <!-- 2.1 Definitie -->
+      <div id="cap2-1">
+        <h2 class="sub-title">2.1 Definiție</h2>
+        <p>Se numește <strong>graf neorientat</strong> o pereche ordonată de mulțimi <span class="m">G=(X,U)</span>, unde:</p>
+        <ul>
+          <li><span class="m">X</span> este o mulțime finită și nevidă de elemente numite <strong>vârfuri</strong> sau <strong>noduri</strong>;</li>
+          <li><span class="m">U</span> este o mulțime finită de submulțimi cu două elemente din <span class="m">X</span>, numite <strong>muchii</strong>.</li>
+        </ul>
+        <p>
+          Vom nota în continuare vârfurile cu valori între 1 și <span class="m">n</span> – unde <span class="m">n</span> este număru de vârfuri din graf, iar muchiile cu [x,y] sau (x,y), unde <span class="m">x</span> și <span class="m">y</span> sunt vârfuri și se numesc <strong>extremitățile</strong> muchiei.
+        </p>
+        <p>Un <strong>vecin</strong> al unui vârf <span class="m">x</span> este orice vârf <span class="m">y</span> cu proprietatea că există muchia [x,y].</p>
+        <p>Două vârfuri între care există muchie se numesc <strong>adiacente</strong>.</p>
+        <p>Două muchii sunt <strong>incidente</strong> dacă au o o extremitate comună. Un vârf este <strong>incident</strong> cu o muchie dacă vârful este extremitate a acelei muchii.</p>
+        <p>Mulțimea muchiilor are proprietatea de simetrie: dacă [x,y] este muchie, atunci și [y,x] este muchie.</p>
+        <p>Conform definiției:</p>
+        <ul>
+          <li>într-un graf neorientat nu există muchie de la un vârf la el însuși;</li>
+          <li>intre două vârfuri distincte există cel mult o muchie.</li>
+        </ul>
 
-      <h3>2.2 Gradul unui vârf</h3>
-      <p>Gradul unui vârf <code>d(x)</code> reprezintă numărul de muchii care se conectează la el (numărul de vecini).</p>
-      <ul>
-        <li>Vârf cu gradul 0: <strong>vârf izolat</strong>.</li>
-        <li>Vârf cu gradul 1: <strong>vârf terminal</strong> (frunză).</li>
-      </ul>
-      <p>
-        <strong>Teoremă importantă:</strong> Într-un graf neorientat, suma gradelor tuturor vârfurilor este egală cu dublul numărului de muchii: <code>∑ d(x) = 2 * m</code>.<br>
-        <em>Consecință:</em> Numărul nodurilor cu grad impar este întotdeauna un număr par.
-      </p>
+        <p><strong>Exemplu:</strong> Fie <span class="m">G=(X,U)</span>, unde:</p>
+        <p><span class="m">X={1,2,3,4,5,6,7,8,9,10,11}</span></p>
+        <p><span class="m">U={[1,4],[1,5],[2,3],[2,8],[3,11],[4,5],[4,9],[7,10],[8,11]}</span></p>
 
-      <h3>2.3 Reprezentare în memorie</h3>
-      <p><strong>Matricea de adiacență pentru grafuri neorientate:</strong></p>
-      <p>Spre deosebire de grafurile orientate, aici matricea este <strong>complet simetrică</strong> față de diagonala principală, deoarece dacă există muchia <code>[i, j]</code>, automat există și <code>[j, i]</code>.</p>
-      
-      <div style="text-align: center;">
-        <div class="matrice-afisata">
-          0 1 0 0 1<br>
-          1 0 0 0 1<br>
-          0 0 0 0 0<br>
-          0 0 0 0 1<br>
-          1 1 0 1 0
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --- 4((4))
+              1 --- 5((5))
+              4 --- 5
+              4 --- 9((9))
+
+              2((2)) --- 3((3))
+              2 --- 8((8))
+              3 --- 11((11))
+              8 --- 11
+
+              7((7)) --- 10((10))
+              6((6))
+          </div>
         </div>
       </div>
 
-      <h3>2.4 Tipuri particulare de grafuri neorientate</h3>
-      <ul>
-        <li><strong>Graf Bipartit:</strong> Vârfurile pot fi împărțite în două mulțimi disjuncte A și B, astfel încât oricare muchie unește un nod din A cu unul din B. Nu conține cicluri de lungime impară.</li>
-        <li><strong>Graf Complet (K<sub>n</sub>):</strong> Oricare două noduri sunt unite printr-o muchie. Numărul total de muchii este <code>n * (n - 1) / 2</code>.</li>
-        <li><strong>Graf Nul:</strong> Graful care nu are nicio muchie (are doar noduri izolate).</li>
-        <li><strong>Graf Planar:</strong> Graf care poate fi desenat în plan fără ca muchiile să se intersecteze între ele.</li>
-      </ul>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+      <!-- 2.2 Gradul unui varf -->
+      <div id="cap2-2">
+        <h2 class="sub-title">2.2 Gradul unui vârf</h2>
+        <p><strong>Definiție</strong> Într-un graf neorientat se numește grad al unui vârf numărul de vârful adiacente cu acesta (sau numărul de muchii incidente cu acesta). Gradul unui vărf <span class="m">x</span> se notează <span class="m">d(x)</span> (degree).</p>
+
+        <p><strong>Observații:</strong></p>
+        <ul>
+          <li>un vârf cu gradul 0 se numește izolat. În graful de mai sus, vârful 6 este izolat.</li>
+          <li>un vârf cu gradul 1 se numește terminal. În graful de mai sus, vârful 9 este vârf terminal.</li>
+          <li>gradul maxim al unui vârf într-un graf cu <span class="m">n</span> vârfuri este <span class="m">n-1</span>.</li>
+        </ul>
+
+        <p><strong>Teoremă:</strong> Într-un graf neorientat, suma gradelor tuturor vârfurilor este dublul numărului de muchii.</p>
+        <p><strong>Consecințe:</strong></p>
+        <ul>
+          <li>Suma gradelor tuturor vârfurilor este număr par.</li>
+          <li>Într-un graf neorientat, numărul de vârfuri de grad impar este întotdeauna par.</li>
+        </ul>
+      </div>
+
+      <!-- 2.3 Reprezentarea grafurilor neorientate -->
+      <div id="cap2-3">
+        <h2 class="sub-title">2.3 Reprezentarea grafurilor neorientate</h2>
+
+        <h3 class="sub-sub-title">Matricea de adiacență</h3>
+        <p>Pentru un graf neorientat <span class="m">G=(X,U)</span> cu <span class="m">n</span> vârfuri, matricea de adiacență este o matrice cu <span class="m">n</span> linii și <span class="m">n</span> coloane și elemente din {0,1}, cu:<br>
+        <span class="m">A[i,j] = 1</span> dacă [i, j] &isin; U<br>
+        <span class="m">A[i,j] = 0</span> dacă [i, j] &notin; U</p>
+
+        <p><strong>Exemplu:</strong> Pentru graful neorientat de mai jos avem următoarea matrice de adiacență:</p>
+        <table class="tabel-doc">
+          <thead>
+            <tr>
+              <th>Graf</th>
+              <th>Matricea de adiacență A</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    1((1)) --- 2((2))
+                    1 --- 5((5))
+                    2 --- 5
+                    4((4)) --- 5
+                    3((3))
+                </div>
+              </td>
+              <td>
+                <div class="matrix-display">
+                  0 1 0 0 1<br>
+                  1 0 0 0 1<br>
+                  0 0 0 0 0<br>
+                  0 0 0 0 1<br>
+                  1 1 0 1 0
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Observații:</strong></p>
+        <ul>
+          <li>matricea de adiacență este simetrică față de diagonala principală;</li>
+          <li>elementele de pe diagonala principală sunt 0;</li>
+          <li>gradul unui vârf <span class="m">x</span> este egal cu numărul de elemente 1 de pe linia (sau coloana) <span class="m">x</span>;</li>
+          <li>suma tuturor elementelor din matricea de adiacență a unui graf neorientat este egală cu dublul numărului de muchii din graf.</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Lista de muchii</h3>
+        <p>Lista de muchii a unui graf neorientat reprezintă o mulțime ce conține toate muchiile din graf.</p>
+        <p>Pentru graful de mai sus, lista de muchii este:</p>
+        <p><span class="m">U={[1,2],[1,5],[2,5],[4,5]}</span></p>
+
+        <p>Pentru reprezentarea în memorie putem folosi:</p>
+        <ul>
+          <li>un tablou unidimensional cu elemente de tip struct {int I,J;}</li>
+          <li>două tablouri unidimensionale cu elemente de tip int</li>
+          <li>o listă alocată dinamic</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Liste de adiacențe (de vecini)</h3>
+        <p>Pentru un graf neorientat cu <span class="m">G=(X,U)</span> se va memora numărul de vârfuri <span class="m">n</span> și apoi, pentru fiecare vârf <span class="m">x</span>, lista vârfurilor adiacente cu <span class="m">x</span>, adică a vârfurilor <span class="m">y</span> cu proprietatea că există muchia [x,y].</p>
+        <p>Pentru graful de mai sus, listele de adiacență sunt:</p>
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 15px; font-family: monospace; display: inline-block; margin-bottom: 8px;">
+          1: 2 5<br>
+          2: 1 5<br>
+          3: vidă<br>
+          4: 5<br>
+          5: 1 2 4
+        </div>
+        <p>La reprezentarea în memorie trebuie avut în vedere că dimensiunile listelor de vecini sunt variabile. De aceea, este neeficientă utilizarea unor tablouri alocate static. Astfel, putem folosi:</p>
+        <ul>
+          <li>un șir de n tablouri unidimensionale alocate dinamic;</li>
+          <li>un șir de n vectori din STL;</li>
+          <li>un șir de n liste simplu (dublu) înlănțuite alocate dinamic.</li>
+        </ul>
+      </div>
+
+      <!-- 2.4 Grafuri neorientate speciale -->
+      <div id="cap2-4">
+        <h2 class="sub-title">2.4 Grafuri neorientate speciale</h2>
+
+        <h3 class="sub-sub-title">Graf parțial. Subgraf. Graf complementar</h3>
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(X, U)</span> un graf neorientat. Se numeşte graf parțial al grafului <span class="m">G</span>, graful neorientat <span class="m">G1=(X, U1)</span>, unde <span class="m">U1 &sube; U</span>.</p>
+        <p>Din definiție rezultă:</p>
+        <ul>
+          <li>Un graf parțial al unui graf neorientat <span class="m">G=(V,U)</span>, are aceeaşi mulțime de vârfuri ca şi <span class="m">G</span>, iar mulțimea muchiilor este o submulțime a lui <span class="m">U</span> sau chiar <span class="m">U</span>.</li>
+          <li>Fie <span class="m">G=(X, U)</span> un graf neorientat. Un graf parțial al grafului <span class="m">G</span> se obține păstrând vârfurile şi eliminând eventual nişte muchii (se pot elimina şi toate muchiile sau chiar nici una).</li>
+        </ul>
+
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(X, U)</span> un graf orientat. Se numeşte subgraf al grafului <span class="m">G</span> graful neorientat <span class="m">G1=(X1,U1)</span> unde <span class="m">X1 &sube; X</span> iar <span class="m">U1</span> conține toate arcele din <span class="m">U</span> care au extremitățile în <span class="m">X1</span>.</p>
+        <p>Din definiție rezultă:</p>
+        <ul>
+          <li>Fie <span class="m">G=(X,U)</span> un graf orientat. Un subgraf al grafului <span class="m">G</span>, se obține ştergând eventual anumite vârfuri şi odată cu acestea şi muchiile care le admit ca extremitate (nu se pot şterge toate vârfurile deoarece s-ar obține un graf cu mulțimea vârfurilor vidă).</li>
+        </ul>
+
+        <p><strong>Definiție.</strong> Fie <span class="m">G=(X, U)</span> un graf neorientat. Se numeşte graf complementar al grafului <span class="m">G</span>, graful neorientat <span class="m">G1=(X, U1)</span>, cu proprietatea că două vârfuri <span class="m">x</span> și <span class="m">y</span> sunt adiacente în <span class="m">G1</span> dacă și numai dacă nu sunt adiacente în <span class="m">G</span>.</p>
+
+        <p><strong>Exemplu:</strong></p>
+        <table class="tabel-doc">
+          <thead>
+            <tr>
+              <th>Graful inițial</th>
+              <th>Graf parțial</th>
+              <th>Subgraf</th>
+              <th>Graf complementar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    2((2)) --- 3((3))
+                    2 --- 1((1))
+                    2 --- 6((6))
+                    3 --- 1
+                    6 --- 1
+                    6 --- 5((5))
+                    4((4)) --- 5
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    2((2)) --- 3((3))
+                    2 --- 6((6))
+                    6 --- 1((1))
+                    6 --- 5((5))
+                    4((4)) --- 5
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    2((2)) --- 1((1))
+                    2 --- 6((6))
+                    6 --- 1
+                    4((4))
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    2((2)) --- 4((4))
+                    2 --- 5((5))
+                    3((3)) --- 4
+                    3 --- 5
+                    3 --- 6((6))
+                    4 --- 1((1))
+                    4 --- 6
+                    5 --- 1
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>S-au eliminat muchiile [1,2], [3,1]</td>
+              <td>S-a eliminat vârfurile 3 5 și toate muchiile incidente cu ele.</td>
+              <td>O muchie [x,y] apare în graful complementar dacă și numai dacă nu apare în graful inițial.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Observații.</strong> Un graf neorientat oarecare poate avea mai multe grafuri parțiale și subgrafuri, dar un unic graf complementar. Mai precis:</p>
+        <p><strong>Teoremă:</strong> Fie <span class="m">G</span> un graf neorientat cu <span class="m">n</span> vârfuri și <span class="m">m</span> muchii. Atunci:</p>
+        <ul>
+          <li>graful <span class="m">G</span> admite grafuri parțiale;</li>
+          <li>graful <span class="m">G</span> admite subgrafuri;</li>
+          <li>graful <span class="m">G</span> admite un unic graf complementar.</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Graf Bipartit</h3>
+        <p><strong>Definiţie:</strong> Un graf <span class="m">G=(X, U)</span> se numește graf bipartit dacă există două mulţimi nevide <span class="m">A</span> și <span class="m">B</span> astfel încât <span class="m">X=A &cup; B</span>, <span class="m">A &cap; B = &empty;</span> şi orice muchie <span class="m">u</span> a lui <span class="m">G</span> are o extremitate în <span class="m">A</span> iar cealaltă în <span class="m">B</span>. Mulţimile <span class="m">A</span> şi <span class="m">B</span> formează o partiţie a lui <span class="m">X</span>.</p>
+        <p><strong>Exemplu:</strong> Graful următor este bipartit. <span class="m">A={1,2,5,7}</span> și <span class="m">B={3,4,6}</span>.</p>
+        
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph TD
+              subgraph A ["Partiția A"]
+                1((1))
+                2((2))
+                5((5))
+                7((7))
+              end
+              subgraph B ["Partiția B"]
+                4((4))
+                3((3))
+                6((6))
+              end
+              1 --- 4
+              2 --- 4
+              2 --- 3
+              5 --- 3
+              5 --- 6
+              7 --- 6
+          </div>
+        </div>
+
+        <p><strong>Observatii:</strong></p>
+        <ul>
+          <li>orice arbore este bipartit</li>
+          <li>nu orice graf bipartit este arbore.</li>
+        </ul>
+
+        <p><strong>Definiție:</strong> Un graf bipartit <span class="m">G=(X,U)</span> se numește bipartit complet dacă pentru oricare două vârfuri <span class="m">x&isin;A</span> și <span class="m">y&isin;B</span>, există în graf muchia (x,y); adică <span class="m">(x,y)&isin;U</span>.</p>
+        <p><strong>Exemplu:</strong> Graful următor este bipartit complet.</p>
+        
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph TD
+              subgraph A ["Mulțimea A"]
+                1((1))
+                2((2))
+                5((5))
+                7((7))
+              end
+              subgraph B ["Mulțimea B"]
+                4((4))
+                3((3))
+                6((6))
+              end
+              1 --- 4
+              1 --- 3
+              1 --- 6
+              2 --- 4
+              2 --- 3
+              2 --- 6
+              5 --- 4
+              5 --- 3
+              5 --- 6
+              7 --- 4
+              7 --- 3
+              7 --- 6
+          </div>
+        </div>
+
+        <h3 class="sub-sub-title">Verificarea unui graf bipartit</h3>
+        <p>Putem verifica dacă un graf e bipartit in 2 moduri:</p>
+        <ul>
+          <li>un graf e bipartit daca putem colora nodurile cu 2 culori, astfel incat fiecare muchie sa aiba capete de culori diferite</li>
+          <li>un graf e bipartit daca nu contine cicluri de lungime para;</li>
+        </ul>
+
+        <div class="diagram-container grid-2">
+          <div style="text-align: center;">
+            <div class="mermaid">
+              graph TD
+                N1(( )) --- N2(( ))
+                N2 --- N3(( ))
+                N3 --- N4(( ))
+                N4 --- N5(( ))
+                N5 --- N1
+            </div>
+            <p><em>Cycle graph of length 5</em></p>
+          </div>
+          <div style="text-align: center;">
+            <div class="mermaid">
+              graph TD
+                M1(( )) --- M2(( ))
+                M2 --- M3(( ))
+                M3 --- M4(( ))
+                M4 --- M5(( ))
+                M5 --- M6(( ))
+                M6 --- M1
+            </div>
+            <p><em>Cycle graph of length 6</em></p>
+          </div>
+        </div>
+
+        <h3 class="sub-sub-title">Graf Eulerian</h3>
+        <p><strong>Definiții</strong></p>
+        <ul>
+          <li>Într-un graf neorientat, se numește lanț eulerian un lanț simplu în care apare fiecare muchie (fiind lanț simplu, fiecare muchie apare o singură dată).</li>
+          <li>Într-un graf neorientat, se numește ciclu eulerian un ciclu în care apare fiecare muchie.</li>
+          <li>Un graf neorientat se numește graf eulerian dacă conține un ciclu eulerian.</li>
+        </ul>
+
+        <p><strong>Exemplu</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --- 2((2))
+              1 --- 3((3))
+              2 --- 4((4))
+              4 --- 5((5))
+              5 --- 3
+              3 --- 6((6))
+              6 --- 5
+              5 --- 2
+              2 --- 3
+          </div>
+        </div>
+        <p>În graful de mai sus ciclul (1 2 4 5 3 6 5 2 3 1) este eulerian.</p>
+
+        <h3 class="sub-sub-title">Teorema de caracterizare</h3>
+        <ul>
+          <li>Un graf neorientat fără vârfuri izolate este eulerian dacă și numai dacă este conex și toate vârfurile au grad par.</li>
+          <li>Un graf neorientat fără vârfuri izolate conține un lanț eulerian, dacă și numai dacă este conex și toate vârfurile au grad par, mai puțin două. Aceste vârfuri vor fi extremitățile lanțului eulerian.</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Determinarea unui ciclu eulerian</h3>
+        <p>Pentru determinarea unui ciclu eulerian se pot folosi mai mulți algoritmi. Unul dintre aceștia este asemănător cu parcurgerea în adâncime. Vom folosi o stivă (eventual memoria STACK prin intermediul recursivității):</p>
+        <ul>
+          <li>adăugăm pe stivă un vârf oarecare – de exemplu 1;</li>
+          <li>cât timp stiva nu este vidă
+            <ul>
+              <li>fie k – nodul din vârful stivei</li>
+              <li>determinăm nodurile x adiacente cu k. Eliminăm muchia [k,x] și adăugăm nodul x pe stivă (apel recursiv)</li>
+              <li>continuăm cu nodul situat în vârful stivei</li>
+              <li>adăugăm nodul k într-o listă</li>
+              <li>eliminăm nodul k din stivă</li>
+            </ul>
+          </li>
+          <li>lista construită reprezintă ciclu eulerian</li>
+        </ul>
+
+        <h3 class="sub-sub-title">Graf Hamiltonian</h3>
+        <p><strong>Definiție:</strong> Un graf Hamiltonian este un graf care conține un ciclu Hamiltonian, adică un ciclu care vizitează fiecare nod o singură dată și se întoarce la nodul inițial.</p>
+        <ul>
+          <li>Într-un graf neorientat, se numește lanț hamiltonian un lanț elementar care conține toate vârfurile grafului.</li>
+          <li>Într-un graf neorientat, se numește ciclu hamiltonian un ciclu elementar care conține toate vârfurile grafului.</li>
+          <li>Un graf neorientat se numește graf hamiltonian dacă conține un ciclu hamiltonian.</li>
+        </ul>
+        <p>Pentru un graf orientat se pot definii noțiuni similare, de drum hamiltonian și circuit hamiltonian</p>
+
+        <p><strong>Exemplu:</strong></p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) ---|H| 2((2))
+              2 ---|H| 5((5))
+              5 ---|H| 4((4))
+              4 ---|H| 6((6))
+              6 ---|H| 3((3))
+              3 ---|H| 1
+              2 --- 4
+              3 --- 5
+              6 --- 5
+              style 1 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+              style 2 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+              style 3 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+              style 4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+              style 5 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+              style 6 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+          </div>
+        </div>
+        <p>În graful de mai sus sunt evidențiate muchiile care fac parte dintr-un ciclu hamiltonian: (1, 2, 5, 4, 6, 3)</p>
+
+        <h3 class="sub-sub-title">Graf Planar</h3>
+        <p><strong>Definiție:</strong> Un graf planar este un graf care poate fi desenat pe o suprafață plană astfel încât niciuna dintre muchii să nu se intersecteze.</p>
+        <p><strong>Exemple:</strong></p>
+        <table class="tabel-doc">
+          <thead>
+            <tr>
+              <th>Pentru N = 6 una din cele 5 variante de reprezentare este:</th>
+              <th>Pentru N = 4 există două soluții:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="mermaid">
+                  graph TD
+                    6((6)) --- 5((5))
+                    1((1)) --- 4((4))
+                    2((2)) --- 3((3))
+                </div>
+              </td>
+              <td>
+                <div class="mermaid">
+                  graph LR
+                    subgraph Solutia_1
+                      4((4)) --- 3((3))
+                      1((1)) --- 2((2))
+                    end
+                    subgraph Solutia_2
+                      A4((4)) --- A1((1))
+                      A3((3)) --- A2((2))
+                    end
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub-sub-title">Graful nul</h3>
+        <p>Graful <span class="m">G=(X,U)</span> se numeste graf nul daca multimea <span class="m">U</span> este vida (<span class="m">U=&empty;</span>),adica graful nu are muchii.<br>
+        Reprezentarea sa in plan se face prin noduri izolate.</p>
+
+        <h3 class="sub-sub-title">Graful complet</h3>
+        <p>Un graf cu <span class="m">n</span> noduri este un graf complet daca are proprietatea ca,oricare ar fi doua noduri ale grafului ,ele sunt adiacente .Ele se noteaza cu <span class="m">Kn</span></p>
+        <p><strong>Exemplu:</strong> Graful următor este graful K5.</p>
+        <div class="diagram-container">
+          <div class="mermaid">
+            graph LR
+              1((1)) --- 2((2))
+              1 --- 3((3))
+              1 --- 4((4))
+              1 --- 5((5))
+              2 --- 3
+              2 --- 4
+              2 --- 5
+              3 --- 4
+              3 --- 5
+              4 --- 5
+          </div>
+        </div>
+      </div>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
-    <!-- CONCLUZII -->
+    <!-- Concluzii -->
     <section id="concluzii">
-      <h2 class="sectiune">Concluzii</h2>
-      <p>
-        Alegerea metodei de reprezentare în C++ depinde de tipul de problemă și de memoria disponibilă:
-      </p>
+      <h1 class="sec-title">Concluzii</h1>
+      <p>Mai jos am prezentat un tabel care compară complexitățile celor trei metode de reprezentare a grafurilor. Am evidențiat complexitățile optime pentru fiecare operație.</p>
 
-      <table class="data-table">
+      <table class="tabel-doc">
         <thead>
           <tr>
             <th>Operație</th>
+            <th>Listă de muchii</th>
             <th>Matrice de adiacență</th>
             <th>Liste de adiacență</th>
-            <th>Listă de muchii</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Memorie consumată</td>
-            <td>O(n<sup>2</sup>) - mare</td>
-            <td>O(n + m) - optimă</td>
-            <td>O(m) - mică</td>
-          </tr>
-          <tr>
-            <td>Verificare existență muchie</td>
-            <td>O(1) - instant</td>
-            <td>O(grad(x))</td>
-            <td>O(m) - lent</td>
-          </tr>
-          <tr>
-            <td>Parcurgere vecini nod</td>
-            <td>O(n)</td>
-            <td>O(grad(x)) - foarte rapid</td>
+            <td>Accesarea unei muchii</td>
             <td>O(m)</td>
+            <td><strong style="color: #16a34a;">O(1)</strong></td>
+            <td>O(nr(x))</td>
           </tr>
           <tr>
-            <td>Recomandat pentru</td>
-            <td>Grafuri dense (multe muchii)</td>
-            <td>Grafuri rare (arbori, rețele)</td>
-            <td>Algoritmul lui Kruskal</td>
+            <td>Ștergerea unei muchii</td>
+            <td>O(m)</td>
+            <td><strong style="color: #16a34a;">O(1)</strong></td>
+            <td>O(nr(x))</td>
+          </tr>
+          <tr>
+            <td>Inserarea unei muchii</td>
+            <td><strong style="color: #16a34a;">O(1)</strong></td>
+            <td><strong style="color: #16a34a;">O(1)</strong></td>
+            <td><strong style="color: #16a34a;">O(1)</strong></td>
+          </tr>
+          <tr>
+            <td>Parcurgerea vecinilor unui nod</td>
+            <td>O(m)</td>
+            <td>O(n)</td>
+            <td><strong style="color: #16a34a;">O(nr(x))</strong></td>
           </tr>
         </tbody>
       </table>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+
+      <p>
+        Reprezentarea unui graf prin lista de muchii este cea mai ineficientă metodă. Este utilă doar atunci când efectiv trebuie să parcurgem muchiile grafului, și cel mult să inserăm niște muchii. Una dintre foarte puținele aplicații practice ale listei de muchii este Algoritmul lui Kruskal.
+      </p>
+      <p>
+        Matricea de adiacență și listele de adiacență sunt cele mai folosite metode. Prima are cea mai bună complexitate pentru manipularea muchiilor, însă consumă cea mai multă memorie, și nu permite o parcurgere prea eficientă a vecinilor unui nod. Listele de adiacență sunt însă cele mai bune la capitolul din urmă, iar consumul de memorie al acestora depinde doar de numărul de muchii.
+      </p>
+      <p>
+        Alegerea celei mai potrivite metode de reprezentare a unui graf depinde foarte mult de restricțiile problemei. De obicei însă, matricea de adiacență este mai bună pentru grafurile dense (cu multe muchii), iar listele de adiacență sunt mai bune pentru grafurile rare (cu puține muchii).
+      </p>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
-    <!-- CODURI C++ -->
-    <section id="coduri">
-      <h2 class="sectiune">Programe C++ (Anexe)</h2>
+    <!-- ANEXE -->
+    <section id="anexe">
+      <h1 class="sec-title">Anexe: Programe C++</h1>
 
-      <h3>Anexa 1: Operații pe graf orientat (Adăugare / Ștergere nod și muchie)</h3>
-      <p>Program scris în C++ standard folosind liste de adiacență:</p>
-      
-<pre><code>#include &lt;iostream&gt;
+      <!-- Anexa 1 -->
+      <div id="anexa1">
+        <h2 class="sub-title">Anexa 1: Adaugarea unui nod, stergerea unei nod, scoaterea unei muchii într-un graf orientat</h2>
+        <pre class="code-area"><code>#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;list&gt;
 #include &lt;algorithm&gt;
+using namespace std;
 
-<span class="cuvant-cheie">using namespace</span> std;
-
-<span class="cuvant-cheie">class</span> GrafOrientat {
-<span class="cuvant-cheie">private</span>:
-    <span class="cuvant-cheie">int</span> n; <span class="comentariu">// numarul de noduri</span>
-    vector&lt;list&lt;<span class="cuvant-cheie">int</span>&gt;&gt; L; <span class="comentariu">// vector de liste pentru succesori</span>
-
-<span class="cuvant-cheie">public</span>:
-    GrafOrientat(<span class="cuvant-cheie">int</span> noduri) {
-        n = noduri;
-        L.resize(n);
+class GrafOrientat {
+private:
+    int numărNoduri;
+    // Folosim un vector de liste pentru a reprezenta listele de adiacență
+    vector&lt;list&lt;int&gt;&gt; listaAdiacenta;
+public:
+    // Constructor
+    GrafOrientat(int noduri) {
+        numărNoduri = noduri;
+        listaAdiacenta.resize(noduri);
     }
-
-    <span class="comentariu">// 1. Adaugare arc orientat u -> v</span>
-    <span class="cuvant-cheie">void</span> adaugaMuchie(<span class="cuvant-cheie">int</span> u, <span class="cuvant-cheie">int</span> v) {
-        L[u].push_back(v);
-        cout &lt;&lt; <span class="comentariu">"Arcul "</span> &lt;&lt; u &lt;&lt; <span class="comentariu">" -> "</span> &lt;&lt; v &lt;&lt; <span class="comentariu">" a fost adaugat.\n"</span>;
+    // 1. ADĂUGARE MUCHIE (Graf Orientat: u -> v)
+    void adaugaMuchie(int u, int v) {
+        if (u >= numărNoduri || v >= numărNoduri || u < 0 || v < 0) {
+            cout << "Eroare: Nodurile " << u << " sau " << v << " nu există!\n";
+            return;
+        }
+        listaAdiacenta[u].push_back(v);
+        cout << "Muchia " << u << " -> " << v << " a fost adăugată.\n";
     }
-
-    <span class="comentariu">// 2. Stergere arc u -> v</span>
-    <span class="cuvant-cheie">void</span> stergeMuchie(<span class="cuvant-cheie">int</span> u, <span class="cuvant-cheie">int</span> v) {
-        <span class="cuvant-cheie">auto</span> it = find(L[u].begin(), L[u].end(), v);
-        <span class="cuvant-cheie">if</span> (it != L[u].end()) {
-            L[u].erase(it);
-            cout &lt;&lt; <span class="comentariu">"Arcul "</span> &lt;&lt; u &lt;&lt; <span class="comentariu">" -> "</span> &lt;&lt; v &lt;&lt; <span class="comentariu">" a fost sters.\n"</span>;
+    // 2. SCOATERE/ȘTERGERE MUCHIE (u -> v)
+    void stergeMuchie(int u, int v) {
+        if (u >= numărNoduri || v >= numărNoduri || u < 0 || v < 0) {
+            cout << "Eroare: Nodurile nu există!\n";
+            return;
+        }
+        
+        auto it = find(listaAdiacenta[u].begin(), listaAdiacenta[u].end(), v);
+        if (it != listaAdiacenta[u].end()) {
+            listaAdiacenta[u].erase(it);
+            cout << "Muchia " << u << " -> " << v << " a fost ștearsă.\n";
+        } else {
+            cout << "Muchia " << u << " -> " << v << " nu există.\n";
         }
     }
-
-    <span class="comentariu">// 3. Adaugare nod nou</span>
-    <span class="cuvant-cheie">void</span> adaugaNod() {
-        n++;
-        L.push_back(list&lt;<span class="cuvant-cheie">int</span>&gt;());
-        cout &lt;&lt; <span class="comentariu">"Nodul nou "</span> &lt;&lt; n - 1 &lt;&lt; <span class="comentariu">" a fost adaugat.\n"</span>;
+    // 3. ADĂUGARE NOD NOU
+    void adaugaNod() {
+        numărNoduri++;
+        listaAdiacenta.push_back(list&lt;int&gt;());
+        cout << "Nodul " << numărNoduri - 1 << " a fost adăugat în graf.\n";
     }
-
-    <span class="comentariu">// 4. Afisarea grafului</span>
-    <span class="cuvant-cheie">void</span> afiseaza() {
-        cout &lt;&lt; <span class="comentariu">"\nListele de adiacenta:\n"</span>;
-        <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> i = 0; i &lt; n; i++) {
-            cout &lt;&lt; i &lt;&lt; <span class="comentariu">": "</span>;
-            <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> vecin : L[i]) cout &lt;&lt; vecin &lt;&lt; <span class="comentariu">" "</span>;
-            cout &lt;&lt; <span class="comentariu">"\n"</span>;
+    // 4. ȘTERGERE NOD
+    // Această operație elimină nodul și reindexează nodurile rămase
+    void stergeNod(int nodDeSters) {
+        if (nodDeSters < 0 || nodDeSters >= numărNoduri) {
+            cout << "Eroare: Nodul " << nodDeSters << " nu există!\n";
+            return;
         }
+        // Pasul A: Eliminăm lista de adiacență a nodului șters
+        listaAdiacenta.erase(listaAdiacenta.begin() + nodDeSters);
+        numarNoduri--;
+        // Pasul B: Eliminăm toate arcele care duceau către nodul șters
+        // Și reindexăm nodurile mai mari decât nodul șters (scădem 1 din valoarea lor)
+        for (int i = 0; i < numărNoduri; i++) {
+            auto it = listaAdiacenta[i].begin();
+            while (it != listaAdiacenta[i].end()) {
+                if (*it == nodDeSters) {
+                    it = listaAdiacenta[i].erase(it); // Ștergem arcul către nodul eliminat
+                } else {
+                    if (*it > nodDeSters) {
+                        *it = *it - 1; // Reindexare coordonată
+                    }
+                    ++it;
+                }
+            }
+        }
+        cout << "Nodul " << nodDeSters << " a fost șters complet din graf.\n";
+    }
+    // Afișarea grafului
+    void afiseazaGraf() {
+        cout << "\n--- Structura Grafului Orientat ---\n";
+        for (int i = 0; i < numărNoduri; i++) {
+            cout << "Nodul " << i << ":";
+            for (int vecin : listaAdiacenta[i]) {
+                cout << " -> " << vecin;
+            }
+            cout << "\n";
+        }
+        cout << "-----------------------------------\n";
     }
 };
 
-<span class="cuvant-cheie">int</span> main() {
-    GrafOrientat G(4);
-    G.adaugaMuchie(0, 1);
-    G.adaugaMuchie(0, 2);
-    G.adaugaMuchie(1, 2);
-    G.adaugaMuchie(2, 3);
-    G.afiseaza();
-
-    G.stergeMuchie(0, 2);
-    G.adaugaNod();
-    G.adaugaMuchie(4, 1);
-    G.afiseaza();
-
-    <span class="cuvant-cheie">return</span> 0;
+int main() {
+    // Inițializăm un graf cu 4 noduri (reprezentate de la 0 la 3)
+    GrafOrientat g(4);
+    // Adăugăm câteva muchii inițiale
+    g.adaugaMuchie(0, 1);
+    g.adaugaMuchie(0, 2);
+    g.adaugaMuchie(1, 2);
+    g.adaugaMuchie(2, 3);
+    g.adaugaMuchie(3, 0);
+    g.afiseazaGraf();
+    // 1. Testare Adăugare Nod
+    g.adaugaNod(); // Va deveni nodul cu indexul 4
+    g.adaugaMuchie(4, 1);
+    g.afiseazaGraf();
+    // 2. Testare Scoatere Muchie
+    g.stergeMuchie(0, 2);
+    g.afiseazaGraf();
+    // 3. Testare Ștergere Nod (Ștergem nodul 2)
+    // Toate nodurile de după el (3 și 4) se vor reindexa în (2 și 3)
+    g.stergeNod(2);
+    g.afiseazaGraf();
+    return 0;
 }</code></pre>
 
-      <h3>Anexa 2: Reprezentare simplă pentru graf neorientat cu matrice</h3>
-      <p>Exemplul de bază predat la clasă pentru citire și afișare:</p>
+        <h3 class="sub-sub-title">Cum funcționează logica codului:</h3>
+        <ul>
+          <li><strong>Adăugarea unui nod:</strong> Mărește dimensiunea vectorului grafului cu încă o listă goală dedicată noului nod.</li>
+          <li><strong>Scoaterea unei muchii:</strong> Caută elementul în lista de vecini a nodului sursă și îl șterge.</li>
+          <li><strong>Ștergerea unui nod:</strong> Este cea mai complexă operație într-o listă de adiacență standard. Pe lângă eliminarea listei proprii a nodului, algoritmul parcurge restul grafului pentru a șterge arcele care intrau în nodul eliminat și reindexează nodurile rămase cu o poziție mai în spate pentru a nu lăsa goluri în vector.</li>
+        </ul>
+      </div>
 
-<pre><code>#include &lt;iostream&gt;
-<span class="cuvant-cheie">using namespace</span> std;
+      <!-- Anexa 2 -->
+      <div id="anexa2" style="margin-top: 30px;">
+        <h2 class="sub-title">Anexa 2: Adaugarea unui nod, stergerea unei nod, scoaterea unei muchii într-un graf neorientat</h2>
+        <pre class="code-area"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+#include &lt;map&gt;
 
-<span class="cuvant-cheie">int</span> a[50][50]; <span class="comentariu">// matricea de adiacenta</span>
-<span class="cuvant-cheie">int</span> n, m;      <span class="comentariu">// n = noduri, m = muchii</span>
-
-<span class="cuvant-cheie">int</span> main() {
-    cout &lt;&lt; <span class="comentariu">"Introduceti numarul de noduri si muchii: "</span>;
-    cin &gt;&gt; n &gt;&gt; m;
-
-    <span class="comentariu">// Initializam matricea cu 0</span>
-    <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> i = 1; i &lt;= n; i++)
-        <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> j = 1; j &lt;= n; j++)
-            a[i][j] = 0;
-
-    cout &lt;&lt; <span class="comentariu">"Introduceti muchiile (u v):\n"</span>;
-    <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> k = 1; k &lt;= m; k++) {
-        <span class="cuvant-cheie">int</span> u, v;
-        cin &gt;&gt; u &gt;&gt; v;
-        a[u][v] = 1;
-        a[v][u] = 1; <span class="comentariu">// Muchia este bidirectionala</span>
-    }
-
-    <span class="comentariu">// Afisare matrice</span>
-    cout &lt;&lt; <span class="comentariu">"\nMatricea de adiacenta:\n"</span>;
-    <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> i = 1; i &lt;= n; i++) {
-        <span class="cuvant-cheie">for</span> (<span class="cuvant-cheie">int</span> j = 1; j &lt;= n; j++) {
-            cout &lt;&lt; a[i][j] &lt;&lt; <span class="comentariu">" "</span>;
+class GrafNeorientat {
+private:
+    // Folosim un map pentru a permite noduri cu orice etichetă (ID)
+    // Fiecare nod are un set de vecini pentru căutare și ștergere rapidă (O(log N))
+    std::map&lt;int, std::set&lt;int&gt;&gt; listaAdiacenta;
+public:
+    // 1. Adăugarea unui nod nou
+    void adaugaNod(int nod) {
+        if (listaAdiacenta.find(nod) == listaAdiacenta.end()) {
+            listaAdiacenta[nod] = std::set&lt;int&gt;();
+            std::cout << "Nodul " << nod << " a fost adaugat.\n";
+        } else {
+            std::cout << "Nodul " << nod << " exista deja in graf.\n";
         }
-        cout &lt;&lt; endl;
     }
-    <span class="cuvant-cheie">return</span> 0;
+    // 2. Adăugarea unei muchii (legătură între două noduri)
+    void adaugaMuchie(int u, int v) {
+        // Dacă nodurile nu există, le creăm automat
+        if (listaAdiacenta.find(u) == listaAdiacenta.end()) adaugaNod(u);
+        if (listaAdiacenta.find(v) == listaAdiacenta.end()) adaugaNod(v);
+        listaAdiacenta[u].insert(v);
+        listaAdiacenta[v].insert(u); // Graf neorientat (legătura e în ambele sensuri)
+        std::cout << "Muchia (" << u << " - " << v << ") a fost adaugata.\n";
+    }
+    // 3. Scoaterea (ștergerea) unei muchii specifice
+    void scoateMuchie(int u, int v) {
+        if (listaAdiacenta.find(u) != listaAdiacenta.end() && listaAdiacenta[u].count(v)) {
+            listaAdiacenta[u].erase(v);
+            listaAdiacenta[v].erase(u);
+            std::cout << "Muchia (" << u << " - " << v << ") a fost scoasa.\n";
+        } else {
+            std::cout << "Muchia (" << u << " - " << v << ") nu exista.\n";
+        }
+    }
+    // 4. Ștergerea completă a unui nod (și a tuturor muchiilor sale)
+    void stergeNod(int nod) {
+        auto it = listaAdiacenta.find(nod);
+        if (it == listaAdiacenta.end()) {
+            std::cout << "Nodul " << nod << " nu exista in graf.\n";
+            return;
+        }
+        // Ștergem legăturile din listele vecinilor
+        for (int vecin : it->second) {
+            listaAdiacenta[vecin].erase(nod);
+        }
+        // Ștergem nodul propriu-zis din graf
+        listaAdiacenta.erase(it);
+        std::cout << "Nodul " << nod << " si muchiile sale au fost sterse.\n";
+    }
+    // Afișarea grafului
+    void afiseazaGraf() {
+        if (listaAdiacenta.empty()) {
+            std::cout << "Graful este gol.\n";
+            return;
+        }
+        std::cout << "\n--- Structura Grafului ---\n";
+        for (const auto& pereche : listaAdiacenta) {
+            std::cout << "Nodul " << pereche.first << " se conecteaza cu: ";
+            if (pereche.second.empty()) {
+                std::cout << "nimic (nod izolat)";
+            } else {
+                for (int vecin : pereche.second) {
+                    std::cout << vecin << " ";
+                }
+            }
+            std::cout << "\n";
+        }
+        std::cout << "--------------------------\n\n";
+    }
+};
+
+int main() {
+    GrafNeorientat g;
+    // Construim graful inițial
+    std::cout << "=== Creare Graf ===\n";
+    g.adaugaMuchie(1, 2);
+    g.adaugaMuchie(1, 3);
+    g.adaugaMuchie(2, 4);
+    g.adaugaMuchie(3, 4);
+    g.adaugaNod(5); // Adăugăm un nod izolat
+    g.afiseazaGraf();
+    // Scoatem o muchie
+    std::cout << "=== Scoatere Muchie ===\n";
+    g.scoateMuchie(1, 3);
+    g.afiseazaGraf();
+    // Ștergem un nod cu totul
+    std::cout << "=== Stergere Nod ===\n";
+    g.stergeNod(2);
+    g.afiseazaGraf();
+    return 0;
 }</code></pre>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+
+        <h3 class="sub-sub-title">Cum funcționează codul:</h3>
+        <ul>
+          <li><strong>Structura (std::map și std::set):</strong> Folosirea unui map ne permite să adăugăm noduri cu orice număr (ex: nodul 100, nodul 5) fără a fi nevoiți să alocăm o matrice uriașă. std::set memorează vecinii în ordine și ne permite să verificăm sau să ștergem o muchie instant, fără a parcurge toată lista.</li>
+          <li><strong>Ștergerea nodului:</strong> Când ștergem nodul X, programul merge la fiecare vecin al lui X și îl elimină pe X din lista lor de adiacență, asigurând integritatea grafului neorientat.</li>
+        </ul>
+      </div>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
     <!-- BIBLIOGRAFIE -->
     <section id="bibliografie">
-      <h2 class="sectiune">Bibliografie</h2>
-      <ol>
-        <li>Mariana Miloșescu – <em>Informatică: Profilul real, Specializarea Matematică-Informatică</em>, Editura Didactică și Pedagogică.</li>
-        <li>Daniela Sâru – <em>Algoritmi și limbaje de programare</em>, Manual pentru liceu.</li>
-        <li>Emanuela Cerchez, Șerban Marcu – <em>Programarea în limbajul C/C++</em>, Editura Polirom.</li>
-      </ol>
-      <a href="#info" class="top-btn">↑ Înapoi la început</a>
+      <h1 class="sec-title">BIBLIOGRAFIE.</h1>
+      <p>Mariana Milosescu - Specializarea :Matematica-Informatica</p>
+      <p>Daniela Saru –Algoritmi si limbaje de programare</p>
+      <p>Mariana Milosescu – Informatica ,profilul real .Specializare:informatica,intensive informatica.</p>
+      <a href="#" class="inapoi">↑ Înapoi la meniu</a>
     </section>
 
   </div>
-
-  <footer>
-    Proiect de atestat la informatică &copy; 2027 • Jâtea Miruna Andreea
-  </footer>
 
 </body>
 </html>
